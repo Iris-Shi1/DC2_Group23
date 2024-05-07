@@ -96,14 +96,30 @@ def merge_crime_ss_into(output_file: str, folders: List[str]) -> None:
        print(f"Error writing to file '{output_file}': {e}")
 
 
-
+def merge_crime_general(output_file: str, folders: List[str], file_type: str) -> None:
+   try:
+       with open(output_file, 'w', newline='') as outfile:
+           csv_writer = csv.writer(outfile)
+           for folder in folders:
+               csv_files = glob.glob(folder + f'/*{file_type}.csv')
+               print("CSV files found in folder:", csv_files)  # Debugging output
+               for csv_file in csv_files:
+                   try:
+                       with open(csv_file, 'r', newline='') as infile:
+                           csv_reader = csv.reader(infile)
+                           for row in csv_reader:
+                               csv_writer.writerow(row)
+                       print(f"Concatenated CSV file: {csv_file}")
+                   except Exception as e:
+                       print(f"Error reading file '{csv_file}': {e}")
+   except Exception as e:
+       print(f"Error writing to file '{output_file}': {e}")
 
 
 # Function calls
 #merge_crime_street_into(output_file="project_data/combined_crime.csv", folders= folders)
 #merge_crime_outcomes_into(output_file="project_data/combined_crime_outcomes.csv", folders= folders)
-<<<<<<< HEAD
 #merge_crime_ss_into(output_file="project_data/combined_crime_stop_and_search.csv", folders= folders)
-=======
-merge_crime_ss_into(output_file="project_data/combined_crime_stop_and_search.csv", folders= folders)
->>>>>>> 9e94c73 (Concatenated crime.csv's into one file while only retaining the metropolitan-street data. Again but for outcomes and stop-and-search data as well)
+merge_crime_general(output_file="project_data/combined_street.csv", folders= folders, file_type='-street')
+merge_crime_general(output_file="project_data/combined_outcomes.csv", folders= folders, file_type='-outcomes')
+merge_crime_general(output_file="project_data/combined_stop_and_search.csv", folders= folders, file_type='-stop-and-search')
