@@ -2,8 +2,8 @@ import pandas as pd
 
 # Read the CSV files into pandas DataFrames
 try:
-    df_extra = pd.read_csv('project_data/Data.csv', low_memory=False)
-    df_crime = pd.read_csv('project_data/crime_type_data.csv', low_memory=False)
+    df_extra = pd.read_csv('../project_data/Data.csv', low_memory=False)
+    df_crime = pd.read_csv('../project_data/crime_type_data.csv', low_memory=False)
     print("Files read successfully.")
 except FileNotFoundError as e:
     print(f"File not found: {e}")
@@ -64,7 +64,7 @@ print(merged_df.info())
 
 # Save the merged DataFrame to a CSV file
 try:
-    merged_df.to_csv('extra_crime_dataset.csv', index=False)
+    merged_df.to_csv('../project_data/extra_crime_dataset.csv', index=False)
     print('Merged DataFrame saved to extra_crime_dataset.csv')
 except PermissionError as e:
     print(f"Permission error: {e}")

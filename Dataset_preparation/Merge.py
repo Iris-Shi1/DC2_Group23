@@ -135,10 +135,6 @@ def merge_pas_general(output_file: str, folders: List[str]) -> None:
        print(f"Error writing to file '{output_file}': {e}")
 
 # Function calls
-#merge_crime_street_into(output_file="project_data/combined_crime.csv", folders= folders)
-#merge_crime_outcomes_into(output_file="project_data/combined_crime_outcomes.csv", folders= folders)
-#merge_crime_ss_into(output_file="project_data/combined_crime_stop_and_search.csv", folders= folders)
-#merge_crime_general(output_file="project_data/combined_street.csv", folders= folders, file_type='-street')
-#merge_crime_general(output_file="project_data/combined_outcomes.csv", folders= folders, file_type='-outcomes')
-#merge_crime_general(output_file="project_data/combined_stop_and_search.csv", folders= folders, file_type='-stop-and-search')
-merge_pas_general(output_file='project_data/pas_granular.csv', folders=['data'])
+merge_crime_street_into(output_file="project_data/combined_crime.csv", folders= folders)
+merge_crime_outcomes_into(output_file="project_data/combined_crime_outcomes.csv", folders= folders)
+merge_crime_ss_into(output_file="project_data/combined_crime_stop_and_search.csv", folders= folders)
