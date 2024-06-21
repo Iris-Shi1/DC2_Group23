@@ -2,10 +2,11 @@
 imports: pandas 2.2.2, jupyter 1.0.0, seaborn  0.13.2, matplotlib 3.8.4, shapely 2.0.4, geopandas 1.0.0a1, xgboost 2.0.3, scikit-learn 1.5.0, openpyxl 3.1.4, lightgbm 4.4.0, imblearn 0.0, statsmodels 0.14.2, tqdm 4.66.4, numpy 1.26.4, scipy 1.13.1, folium 0.16.0, dash 2.17.0, dash-bootstrap-components 1.6.0, dash-core-components 2.0.0, dash-html-components 2.0.0, dash-table 5.0.0  
 DC2group23
 
-Before running the code, make sure the following files are added to the 'data' folder:
-- all the data for crimes from 2010 to 2024. It is ok if it is in the form of folders separated by year and month
-All other datasets used have to be added to the folder 'project_data':
-- all the PAS datasets, both granular and not - a total of 6 PAS datasets of which 5 have granular data
+Before running the code, make sure the following files are added to your 'data' folder:
+- all the data for crimes from 2010 to 2024. It is ok if it is in the form of folders separated by year and month. You can access the data for download from the police.uk data repository via this link: https://data.police.uk/data/
+
+- PAS granular data. Please download numerical PAS granular data ('PAS_Numerical_Data_borough_valid.csv' and 'PAS_Numerical_Data_673.csv') before runing the code. You can access the data for download via this link: https://drive.google.com/drive/folders/1MUJVoi3LJgRYNnWxUnECAuLPlaBMn0zm
+
 - London_Boroughs.gpkg - https://data.london.gov.uk/dataset/london_boroughs
 
 In project data there is an already existing dataset named 'Data' since that dataset has been manually made in Excel.
